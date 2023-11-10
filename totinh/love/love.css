@@ -1,27 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
+body {
     overflow: hidden;
 }
-.wrapper{
+html {
+    height: 100%;
+    /* max-height: 600px; */
+    width: 1000px;
+    /* background-color: hsla(200, 40%, 30%, 0.4); */
+    background-image: url("../image/giftbox.png"), url("../../img/banner.jpg");
+    /* url("makeupspa-kit-theme-happy-birthday-bunting-paper-banner-party-supply-261454.png"),
+        url("PNGkhothietke.net-02776.png");  */
+    /* url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png'); */
+    background-repeat: repeat-x;
+    background-position: 0 20%, 0 100%, 0 50%, 0 100%, 0 0;
+    background-size: 2500px, 800px, 500px 200px, 1000px, 400px 260px;
+    animation: 50s para infinite linear;
+}
+
+@keyframes para {
+    100% {
+        background-position: -5000px 20%, -800px 95%, 500px 50%, 1000px 100%,
+            400px 0;
+    }
+}
+.wrapper {
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
 }
-.formInput{
+
+.formInput {
     position: absolute;
     top: -100%;
     width: 40%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #EA4C89;
+    background-color: #ea4c89;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,86 +57,88 @@ body{
     animation: formInput 1s 3s forwards;
 }
 @keyframes formInput {
-    0%{
+    0% {
         top: -100%;
     }
-    100%{
+    100% {
         top: 20px;
     }
 }
-.formInput::before{
+.formInput::before {
     position: absolute;
-    content: '';
+    content: "";
     width: 8px;
     height: 40px;
-    background: #EA4C89;
+    background: #ea4c89;
     top: -30px;
     left: 20%;
     z-index: -10;
 }
-.formInput::after{
+.formInput::after {
     position: absolute;
-    content: '';
+    content: "";
     width: 8px;
     height: 40px;
-    background: #EA4C89;
+    background: #ea4c89;
     top: -30px;
     right: 20%;
     z-index: -1;
 }
-.boxHands{
+.boxHands {
     position: absolute;
     display: flex;
     justify-content: center;
     top: -40%;
     animation: handsCat 1s 4s forwards ease-in;
 }
-@keyframes handsCat{
-    0%{
+@keyframes handsCat {
+    0% {
         top: -40%;
     }
-    100%{
+    100% {
         top: 0px;
     }
 }
-.formInput .handsCat{
+.formInput .handsCat {
     position: absolute;
     transform: rotate(180deg);
     width: 80px;
     top: -60px;
     animation: hands 1s 5s forwards ease-in-out;
 }
-@keyframes hands{
-    0%{
+@keyframes hands {
+    0% {
         top: -60px;
     }
-    50%,100%{
+    50%,
+    100% {
         top: -150px;
     }
 }
-.handsCat img{
+.handsCat img {
     width: 100%;
 }
-.boxHands h1{
+.boxHands h1 {
     transform: rotate(20deg);
     transform-origin: top left;
     padding-top: 5px;
     color: #fff;
     font-size: 50px;
-    font-family: 'Dancing Script', cursive;
+    font-family: "Dancing Script", cursive;
     animation: textHand 1.5s 6s forwards ease-in;
 }
-@keyframes textHand{
-    0%{
+@keyframes textHand {
+    0% {
         transform: rotate(20deg);
         transform-origin: top left;
     }
-    20%,100%{
+    20%,
+    100% {
         transform: rotate(0deg);
         transform-origin: top left;
     }
 }
-.boxSlider{
+.boxSlider {
     position: relative;
     margin-top: 70px;
     width: 100%;
@@ -125,14 +149,15 @@ body{
     animation: boxSlider 1s 8s forwards ease-out;
 }
 @keyframes boxSlider {
-    0%{
+    0% {
         opacity: 0;
     }
-    100%{
+    100% {
         opacity: 1;
     }
 }
-.boxSlider .left, .boxSlider .right{
+.boxSlider .left,
+.boxSlider .right {
     position: absolute;
     top: 50%;
     color: #fff;
@@ -141,14 +166,14 @@ body{
     cursor: pointer;
     z-index: 50;
 }
-.left{
+.left {
     left: 100px;
 }
-.right{
+.right {
     right: 100px;
 }
 
-.listSlider{
+.listSlider {
     position: relative;
     width: 200px;
     height: 100px;
@@ -157,17 +182,17 @@ body{
     border-radius: 10px;
 }
 
-.listSlider .slider{
+.listSlider .slider {
     width: 100%;
     position: relative;
     transition: 0.5s;
 }
-.listSlider img{
+.listSlider img {
     width: 200px;
     height: 100%;
     object-fit: cover;
 }
-.boxHandsInput{
+.boxHandsInput {
     display: flex;
     position: relative;
     top: 15px;
@@ -175,29 +200,30 @@ body{
     width: 50%;
     animation: boxInputHands 1s 9s forwards ease-in;
 }
-@keyframes boxInputHands{
-    0%{
-    right: -200%;
+@keyframes boxInputHands {
+    0% {
+        right: -200%;
     }
-    60%,100%{
+    60%,
+    100% {
         right: 0%;
     }
 }
-.boxHandsInput input{
+.boxHandsInput input {
     width: 100%;
     height: 30px;
     border: none;
     outline: none;
     border-radius: 5px;
     padding: 0px 10px;
-    font-family: 'Dancing Script', cursive;
+    font-family: "Dancing Script", cursive;
     font-size: 20px;
     z-index: 11;
     opacity: 0;
     animation: boxSlider 1s 9s forwards ease-out;
 }
 
-.boxHandsInput .handsCatImgInput{
+.boxHandsInput .handsCatImgInput {
     position: absolute;
     width: 80px;
     transform: rotate(270deg);
@@ -207,17 +233,18 @@ body{
     animation: imgHandInput 1s 10s forwards ease-in-out;
 }
 @keyframes imgHandInput {
-    0%{
-    right: -30px;
+    0% {
+        right: -30px;
     }
-    70%,100%{
+    70%,
+    100% {
         right: -100%;
     }
 }
-.boxHandsInput .handsCatImgInput img{
+.boxHandsInput .handsCatImgInput img {
     width: 100%;
 }
-.buttonLove{
+.buttonLove {
     display: flex;
     position: relative;
     margin-top: 25px;
@@ -227,7 +254,7 @@ body{
     width: 35px;
     transition: 0.5s;
 }
-.buttonLove .cricleBtn{
+.buttonLove .cricleBtn {
     width: 40px;
     height: 40px;
     background: #ffb7e4;
@@ -239,10 +266,10 @@ body{
     transform: scale(0);
     transition: 0.5s;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px,
-                inset rgb(255, 255, 255,0.8) 1.95px 1.95px 2.6px,
-                inset rgba(0, 0, 0, 0.2) -1.95px -1.95px 2.6px;
+        inset rgb(255, 255, 255, 0.8) 1.95px 1.95px 2.6px,
+        inset rgba(0, 0, 0, 0.2) -1.95px -1.95px 2.6px;
 }
-.buttonLove .button{
+.buttonLove .button {
     position: absolute;
     outline: none;
     width: 0px;
@@ -251,44 +278,45 @@ body{
     border-radius: 5px;
     transition: 0.5s;
     z-index: 9;
-    background: #FD89C3;
+    background: #fd89c3;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 12px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     user-select: none;
     color: #fff;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px,
-                inset rgb(255, 255, 255,0.8) 1.95px 1.95px 2.6px,
-                inset rgba(0, 0, 0, 0.2) -1.55px -1.55px 2.6px;
+        inset rgb(255, 255, 255, 0.8) 1.95px 1.95px 2.6px,
+        inset rgba(0, 0, 0, 0.2) -1.55px -1.55px 2.6px;
 }
-.buttonLove .button:hover{
+.buttonLove .button:hover {
     background: #ff9fda;
 }
-.boxCar{
+.boxCar {
     position: absolute;
     bottom: 15%;
     transform: translateX(-400px);
     z-index: 2;
     animation: car 4s 1s forwards, car1 2s 5s forwards;
 }
-.boxCar img{
+.boxCar img {
     width: 350px;
 }
-@keyframes car{
-    0%{
+@keyframes car {
+    0% {
         transform: translateX(-400px);
     }
-    50%,100%{
+    50%,
+    100% {
         transform: translateX(150px);
     }
 }
-.boxHeart{
+.boxHeart {
     position: relative;
     width: 100%;
     height: 100vh;
-    animation:  heartX 4s 1s forwards;
+    animation: heartX 4s 1s forwards;
 }
 /* @keyframes car1 {
     0%{
@@ -298,7 +326,12 @@ body{
         transform: translateX(1000px);
     }
 } */
-.heart1,.heart2,.heart3, .heart4, .heart5, .heart6{
+.heart1,
+.heart2,
+.heart3,
+.heart4,
+.heart5,
+.heart6 {
     position: absolute;
     width: 15px;
     height: 15px;
@@ -308,79 +341,88 @@ body{
     left: 450px;
     z-index: 1;
 }
-.heart1{
-    animation:love1 4s infinite ease-in 1s;
+.heart1 {
+    animation: love1 4s infinite ease-in 1s;
 }
-.heart2{
+.heart2 {
     animation: love2 3s infinite ease-in 2s;
 }
-.heart3{
+.heart3 {
     animation: love2 5s infinite ease-in 1.5s;
 }
-.heart4{
+.heart4 {
     animation: love1 2s infinite ease-in 2s;
 }
-.heart5{
+.heart5 {
     animation: love1 2.3s infinite ease-in 0.5s;
 }
-.heart5{
+.heart5 {
     animation: love2 2.5s infinite ease-in 1.5s;
 }
-.heart1::before, .heart2::before,
-.heart3::before,.heart4::before, .heart5::before, .heart6::before{
+.heart1::before,
+.heart2::before,
+.heart3::before,
+.heart4::before,
+.heart5::before,
+.heart6::before {
     position: absolute;
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
     background-color: rgb(255, 62, 65);
     left: -50%;
     border-radius: 50%;
 }
-.heart1::after, .heart2::after,
-.heart3::after, .heart4::after, .heart5::after, .heart6::after{
+.heart1::after,
+.heart2::after,
+.heart3::after,
+.heart4::after,
+.heart5::after,
+.heart6::after {
     position: absolute;
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
     background-color: rgb(255, 62, 65);
     top: -50%;
     border-radius: 50%;
 }
-@keyframes love1{
-    0%{
+@keyframes love1 {
+    0% {
         opacity: 0;
         transform: scale(0.3) rotate(0deg) translate3d(40px, 0, 0);
     }
-    50%{
+    50% {
         opacity: 1;
     }
-    100%{
+    100% {
         opacity: 0;
         transform: scale(0.9) rotate(-15deg) translate3d(-20px, -300px, 0);
     }
 }
-@keyframes love2{
-    0%{
+@keyframes love2 {
+    0% {
         opacity: 0;
         transform: scale(0.2) rotate(10deg) translate3d(50px, 0, 0);
     }
-    50%{
+    50% {
         opacity: 1;
     }
-    100%{
+    100% {
         opacity: 0;
         transform: scale(0.7) rotate(5deg) translate3d(-20px, -250px, 0);
     }
 }
 @keyframes heartX {
-    0%{
+    0% {
         left: -500px;
     }
-    50%,100%{
+    50%,
+    100% {
         left: 0px;
     }
 }
-.boxLine{
+.boxLine {
     position: relative;
     width: 1000px;
     height: 100vh;
@@ -426,13 +468,13 @@ body{
     vertical-align: bottom;
     margin-right: 20px;
 }
-@keyframes roadLine{
+@keyframes roadLine {
     0% {
         -webkit-transform: translate(0, 0);
         -moz-transform: translate(0, 0);
         transform: translate(0, 0);
     }
-    
+
     100% {
         -webkit-transform: translate(-1000px, 0);
         -moz-transform: translate(-1000px, 0);
@@ -447,7 +489,7 @@ body{
     background: repeating-linear-gradient(90deg, transparent 0, transparent 30%, #333 30%, #333 100%);
     background-size: 70px;
 } */
-.loadingLove{
+.loadingLove {
     position: absolute;
     width: 100%;
     min-height: 100vh;
@@ -468,7 +510,7 @@ body{
 .rhombus:before {
     content: "";
     position: absolute;
-    background: #EA4C89;
+    background: #ea4c89;
     height: 40px;
     width: 40px;
     z-index: 0;
@@ -480,7 +522,7 @@ body{
 .rhombus .circle1 {
     content: "";
     position: absolute;
-    background: #EA4C89;
+    background: #ea4c89;
     height: 40px;
     width: 40px;
     z-index: 1;
@@ -494,7 +536,7 @@ body{
 .rhombus .circle2 {
     content: "";
     position: absolute;
-    background: #EA4C89;
+    background: #ea4c89;
     height: 40px;
     width: 40px;
     z-index: 1;
@@ -530,22 +572,23 @@ body{
         margin-left: 30px;
     }
 }
-.element, .heartRain{
+.element,
+.heartRain {
     position: absolute;
     pointer-events: none;
     transition: 1s;
 }
-.letters{
+.letters {
     position: absolute;
     width: 65px;
     transition: 10s ease-in-out;
     cursor: pointer;
     z-index: 1000;
 }
-.letters img{
+.letters img {
     width: 100%;
 }
-.wrapperLetterForm{
+.wrapperLetterForm {
     position: absolute;
     top: 0;
     left: 0;
@@ -555,32 +598,32 @@ body{
     background: rgba(0, 0, 0, 0.7);
     display: none;
 }
-.boxLetter{
+.boxLetter {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.boxLetter .formLetter{
+.boxLetter .formLetter {
     position: relative;
     width: 600px;
     height: 350px;
-    background-color: #FFEBEB;
+    background-color: #ffebeb;
     border-radius: 20px;
     z-index: 100;
     padding: 20px 15px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.formLetter .wrapperLetter{
+.formLetter .wrapperLetter {
     position: relative;
     width: 100%;
     height: 100%;
-    border: 2px dashed #FF6666;
+    border: 2px dashed #ff6666;
     border-radius: inherit;
     display: flex;
 }
-.boxLetter .before{
+.boxLetter .before {
     position: absolute;
     width: 600px;
     height: 350px;
@@ -589,62 +632,63 @@ body{
     border-radius: 20px;
     z-index: 10;
 }
-.formLetter .heartLetter{
+.formLetter .heartLetter {
     position: absolute;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: #FFEBEB;
+    background: #ffebeb;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10;
 }
-.heartLetter .heartLetterItem{
+.heartLetter .heartLetterItem {
     position: relative;
     width: 10px;
     height: 10px;
     transform: rotate(45deg);
-    background: #FF6666;
+    background: #ff6666;
 }
-.heartLetter:first-child{
+.heartLetter:first-child {
     right: 5px;
     top: 10px;
 }
-.heartLetter:nth-child(2){
+.heartLetter:nth-child(2) {
     left: 5px;
     bottom: 10px;
 }
-.heartLetterItem::before, .heartLetterItem::after{
+.heartLetterItem::before,
+.heartLetterItem::after {
     position: absolute;
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
     border-radius: 50%;
     background: inherit;
 }
-.heartLetterItem::before{
+.heartLetterItem::before {
     top: -50%;
 }
-.heartLetterItem::after{
+.heartLetterItem::after {
     left: -50%;
 }
-.giftbox{
+.giftbox {
     position: relative;
     width: 40%;
     height: 100%;
 }
-.giftbox .img{
+.giftbox .img {
     position: absolute;
     width: 180px;
     bottom: -10px;
     left: 50px;
     z-index: 100;
 }
-.giftbox img{
+.giftbox img {
     width: 100%;
 }
-.textLetter{
+.textLetter {
     position: relative;
     width: 60%;
     flex-direction: column;
@@ -652,20 +696,19 @@ body{
     align-items: center;
     user-select: none;
 }
-.textLetter h2{
+.textLetter h2 {
     margin-top: 20px;
     font-size: 30px;
-    font-family: 'Dancing Script', cursive;
+    font-family: "Dancing Script", cursive;
 }
-.textLetter .contentLetter{
+.textLetter .contentLetter {
     font-size: 19px;
     text-align: center;
     padding: 0px 10px;
     margin-top: 10px;
-    font-family: 'Dancing Script', cursive;
-
+    font-family: "Dancing Script", cursive;
 }
-.fa-xmark{
+.fa-xmark {
     position: absolute;
     right: 20px;
     top: 20px;
@@ -673,32 +716,31 @@ body{
     cursor: pointer;
     font-size: 25px;
 }
-.show{
+.show {
     display: block;
 }
-.heartAnimation{
+.heartAnimation {
     position: absolute;
     width: 200px;
     bottom: 0;
 }
-.heartAnimation img{
+.heartAnimation img {
     width: 100%;
 }
-.mewmew1, .mewmew2{
+.mewmew1,
+.mewmew2 {
     position: absolute;
     width: 90px;
 }
-.mewmew1{
+.mewmew1 {
     bottom: 0;
     left: 0;
 }
-.mewmew2{
+.mewmew2 {
     bottom: 0;
     right: 0;
 }
-.mewmew1 img, .mewmew2 img{
+.mewmew1 img,
+.mewmew2 img {
     width: 100%;
 }
-
-
-

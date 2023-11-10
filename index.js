@@ -1,4 +1,4 @@
-const contentLetterSrart_actived = "Hãy nói gì đó ở đây trước khi người ấy mở bức thư nhé." //Lời mở đầu cho bức thư
+const contentLetterStart_actived = "Hãy nói gì đó ở đây trước khi người ấy mở bức thư nhé." //Lời mở đầu cho bức thư
 const mainContentLetter = "Gửi lời nhắn nhủ đến người bạn bạn yêu thương." //Nội dung của bức thư
 
 // Gắn 1 đường link ảnh bất kì
@@ -9,16 +9,16 @@ imgStart.src = "./img/cute-young-boy-kid-wearing-vest-and-hat-free-png.png";
 let imgLetter = document.querySelector(".img");
 imgLetter.src = "./img/b4bbdb54b7152338d7143cb444a77f09.png"; //Hình ảnh xuất hiện trong nội dung của bức thư sau khi bức thư được viết ra hết
 
-const splitContentLetterSrart_actived = contentLetterSrart_actived.split("");
+const splitContentLetterStart_actived = contentLetterStart_actived.split("");
 
 document.querySelector(".sticker").addEventListener("click", function () { //Hiệu ứng gõ chữ cho phần mở đầu của bức thư
     document.querySelector(".contentLetter").innerHTML = "";
     document.querySelector(".startLetter").classList.add("active")
     setTimeout(() => {
-        splitContentLetterSrart_actived.forEach((val, index) => {
+        splitContentLetterStart_actived.forEach((val, index) => {
             setTimeout(() => {
                 document.querySelector(".contentLetter").innerHTML += val;
-                if (index == contentLetterSrart_actived.length - 1) {
+                if (index == contentLetterStart_actived.length - 1) {
                     setTimeout(() => {
                         document.querySelector(".recieve").setAttribute("style", "opacity: 1; transition: .5s") 
                     }, 1000)
@@ -38,6 +38,7 @@ document.querySelector("#mess").addEventListener("change", function () { //Hiệ
                 document.querySelector(".mainContent").innerHTML += val;
                 if (index == mainContentLetter.length - 1) {
                     document.querySelector(".img1").setAttribute("style", "opacity: 1; transition: .5s")
+                    document.querySelector(".button-next").setAttribute("style", "opacity: 1; transition: .5s")
                 }
             }, 50 * index)
         })
@@ -48,7 +49,9 @@ document.querySelector("#mess").addEventListener("change", function () { //Hiệ
         document.querySelector(".mainContent").innerHTML = "";
     }
 })
-
+document.querySelector(".button-next").addEventListener("click", function () {
+    alert("tiếp tục nào")
+ });
 document.querySelector(".recieve").addEventListener("click", () => {
     document.querySelector(".startLetter").classList.add("close");
     setTimeout(() => {
