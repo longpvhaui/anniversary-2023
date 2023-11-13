@@ -12,13 +12,102 @@ body {
     width: 100%;
     overflow: hidden;
 }
-
+.backgroundParty {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+@keyframes moveHeart {
+    0% {
+        transform: translateY(-10%) rotate(45deg);
+    }
+    100% {
+        transform: translateY(110vh) rotate(45deg);
+    }
+}
+@-webkit-keyframes heartflakes-fall {
+    0% {top:-10%}
+    100% {top:100%}
+  }
+  @-webkit-keyframes heartflakes-shake {
+    0%,100% {-webkit-transform:translateX(0);transform:translateX(0)}
+    50% {-webkit-transform:translateX(80px);transform:translateX(80px)}
+  }
+  @keyframes heartflakes-fall {
+    0% {top:-10%}
+    100% {top:100%}
+  }
+  @keyframes heartflakes-shake {
+    0%,100%{ transform:translateX(0)}
+    50% {transform:translateX(80px)}
+  }
+  .heartflake {
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #000;
+    position:fixed;
+    top:-10%;
+    z-index:9999;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor:default;
+    -webkit-animation-name:heartflakes-fall,heartflakes-shake;
+    -webkit-animation-duration:10s,3s;
+    -webkit-animation-timing-function:linear,ease-in-out;
+    -webkit-animation-iteration-count:infinite,infinite;
+    -webkit-animation-play-state:running,running;
+    animation-name:heartflakes-fall,heartflakes-shake;
+    animation-duration:10s,3s;
+    animation-timing-function:linear,ease-in-out;
+    animation-iteration-count:infinite,infinite;
+    animation-play-state:running,running;
+  }
+  .heartflake:nth-of-type(0){
+    left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s
+  }
+  .heartflake:nth-of-type(1){
+    left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s
+  }
+  .heartflake:nth-of-type(2){
+    left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s
+  }
+  .heartflake:nth-of-type(3){
+    left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s
+  }
+  .heartflake:nth-of-type(4){
+    left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s
+  }
+  .heartflake:nth-of-type(5){
+    left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s
+  }
+  .heartflake:nth-of-type(6){
+    left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s
+  }
+  .heartflake:nth-of-type(7){
+    left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s
+  }
+  .heartflake:nth-of-type(8){
+    left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s
+  }
+  .heartflake:nth-of-type(9){
+    left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s
+  }
+  .heartflake:nth-of-type(10){
+    left:25%;-webkit-animation-delay:2s,0s;animation-delay:2s,0s
+  }
+  .heartflake:nth-of-type(11){
+    left:65%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s
+  }
 .startForm {
     z-index: 7;
     position: fixed;
     height: 100%;
     width: 100%;
-    background-color: rgba(72, 209, 204, 1);
+    background-color: rgb(255, 218, 232);
 }
 
 .startLetter {
@@ -111,7 +200,7 @@ body {
 
 .recieve:hover {
     cursor: grab;
-    box-shadow: 4px 4px 4px gray;
+    box-shadow: 4px 4px 4px rgb(248, 209, 209);
 }
 
 .recieve:active {
@@ -128,7 +217,7 @@ body {
     position: relative;
     height: 100%;
     width: 100%;
-    background-color: rgba(72, 209, 204, 1);
+    background-color: rgb(255, 218, 232);
 }
 
 .balloon {
@@ -261,6 +350,7 @@ body {
     background-color: #d26f72;
     display: block;
     clip-path: polygon(0 0, 50% 35%, 100% 0, 100% 100%, 0 100%);
+    border: 0;
 }
 
 .designBox::after {
